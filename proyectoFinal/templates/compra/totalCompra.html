@@ -1,0 +1,12 @@
+{% extends "master.html" %}
+{% block contenido %}
+<table class="table">
+    <tbody>
+        <td><strong>Cliente: </strong> {{cliente.nombres}} {{cliente.apellidos}}</td>
+        <td><strong>Cedula: </strong>{{cliente.cedula}}</td>
+        <td><strong>Correo: </strong>{{cliente.correo}}</td>
+    </tbody>
+</table>
+<p><strong>Total a pagar: </strong>{{ total }}</p>
+
+{% endblock %}

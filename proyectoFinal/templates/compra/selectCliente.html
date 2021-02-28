@@ -1,0 +1,28 @@
+{% extends "master.html" %}
+{% block contenido %}
+<h4>Lista de Cliente</h4>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Cédula</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cliente in listaClientes%}
+        <tr>
+            <td>{{cliente.cedula}}</td>
+            <td>{{cliente.apellidos}}</td>
+            <td>{{cliente.nombres}}</td>
+            <td>{{cliente.correo}}</td>
+            <td>
+                <a href="{% url 'seleccion_Producto' cliente.cedula "0" %}"><i class="bi bi-check-circle"></i></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

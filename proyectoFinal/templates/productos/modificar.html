@@ -1,0 +1,27 @@
+{% extends "master.html" %}
+{% block contenido %}
+
+<h4>Modificar Producto</h4>
+<form method="POST"> {% csrf_token %}
+    <h3>Datos del Producto</h3>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="id_codigo">Codigo</label>
+            <input type="text" class="form-control" name="codigo" maxlength="10" required id="id_codigo" value="{{ formulario_producto.codigo.value }}">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="id_nombre">Nombre:</label>
+            <input type="text" class="form-control" name="nombre" maxlength="70" required id="id_nombre" value="{{ formulario_producto.nombre.value }}">
+        </div>
+        <div class="form-group col-md-2">
+            <label for="id_stock">Stock:</label>
+            <input type="text" class="form-control" name="stock" maxlength="70" required id="id_stock" value="{{ formulario_producto.stock.value }}">
+        </div>
+        <div class="form-group col-md-2">
+            <label for="id_precio_unitario">Precio Unitario</label>
+            <input type="text" class="form-control" name="precio_Unitario" maxlength="10" required id="id_precio_Unitario" value="{{ formulario_producto.precio_Unitario.value }}">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Modificar Producto</button>
+</form>
+{% endblock %}

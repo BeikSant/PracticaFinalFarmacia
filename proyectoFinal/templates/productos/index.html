@@ -1,0 +1,33 @@
+{% extends "master.html" %}
+{% block contenido %}
+<h4>Lista de Productos</h4>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Precio Unitario</th>
+            <th scope="col">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for producto in listaProductos%}
+        <tr>
+            <td>{{producto.codigo}}</td>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.stock}}</td>
+            <td>{{producto.precio_Unitario}}</td>
+            <td>
+                <a href="{% url 'eliminar_producto' producto.codigo %}"><i class="bi bi-trash"></i></a>
+                <a href="{% url 'modificar_producto' producto.codigo %}"><i class="bi bi-pencil"></i></a>
+            </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <th scope="row" colspan="5">Añadir nuevo Producto <a href="{% url 'crear_producto' %}"><i
+                        class="bi bi-plus-circle"></i></a></th>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,276 @@
+{
+	"info": {
+		"_postman_id": "087922f4-3851-44d6-8da1-6a729a5270fa",
+		"name": "proyectoFinalFarmacia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "Nuevo Cliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cedula\":\"1950031365\",\n    \"nombres\":\"Jheison\",\n    \"apellidos\":\"Santorum\",\n    \"genero\":\"masculino\",\n    \"correo\":\"js@gmail.com\",\n    \"telefono\":\"0985555474\",\n    \"direccion\":\"Yantzaza\",\n    \"date_created\":\"2021-01-29 17:45:37\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/cliente/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"cliente",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Cedula",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9000/cliente/get/1950031365",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"cliente",
+								"get",
+								"1950031365"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Todos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9000/cliente/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"cliente",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9000/cliente/delete/1950031375",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"cliente",
+								"delete",
+								"1950031375"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Producto",
+			"item": [
+				{
+					"name": "Obtener Todos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9000/producto/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"producto",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Nuevo Producto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigo\":\"111111\",\n    \"nombre\":\"Ibuprofeno 200ml\",\n    \"precio_Unitario\":0.50,\n    \"stock\": 110,\n    \"date_created\":\"2021-02-23 17:45:37\"\n}\n"
+						},
+						"url": {
+							"raw": "http://localhost:9000/producto/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"producto",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Codigo",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9000/producto/get/444444",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"producto",
+								"get",
+								"444444"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9000/producto/delete/111111",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"producto",
+								"delete",
+								"111111"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Compra",
+			"item": [
+				{
+					"name": "Compra",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fecha\":\"2021-01-29 17:45:37\",\n    \"numero_Productos\":5,\n    \"descripcion\":\"malestar\",\n    \"date_created\":\"2021-01-29 17:45:37\",\n    \"updated_ad\":\"2021-01-29 17:45:37\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/compra/comprar/1950031375/444444",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"compra",
+								"comprar",
+								"1950031375",
+								"444444"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

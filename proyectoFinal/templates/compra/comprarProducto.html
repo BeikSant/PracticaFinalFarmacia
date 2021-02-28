@@ -1,0 +1,34 @@
+{% extends "master.html" %}
+{% block contenido %}
+
+<h2>Compra</h2>
+<table class="table">
+    <tbody>
+        <td><strong>Cliente: </strong> {{cliente.nombres}} {{cliente.apellidos}}</td>
+        <td><strong>Cedula: </strong>{{cliente.cedula}}</td>
+        <td><strong>Correo: </strong>{{cliente.correo}}</td>
+    </tbody>
+</table>
+<table class="table">
+    <tbody>
+        <td><strong>Nombre Producto: </strong> {{producto.nombre}} </td>
+        <td><strong>Precio Unitario: </strong>{{producto.precio_Unitario}}</td>
+        <td><strong>Stock: </strong>{{producto.stock}}</td>
+    </tbody>
+</table>
+<form method="POST"> {% csrf_token %}
+    <h4><strong>Ingrese la información</strong></h4>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="id_numero_Productos">Numero de Productos a Comprar</label>
+            <input type="number" class="form-control" name="numero_Productos" required id="id_numero_Productos">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="id_descripcion">Descripcion:</label>
+            <textarea class="form-control" name="descripcion" cols="10" rows="2" required id="id_descripcion"></textarea>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Comprar</button>
+</form>
+<p>{{ mensaje }}</p>
+{% endblock %}

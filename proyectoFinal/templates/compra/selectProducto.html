@@ -1,0 +1,36 @@
+{% extends "master.html" %}
+{% block contenido %}
+<h4>Lista de Productos</h4>
+<table class="table">
+    <tbody>
+        <td><strong>Cliente: </strong> {{cliente.nombres}} {{cliente.apellidos}}</td>
+        <td><strong>Cedula: </strong>{{cliente.cedula}}</td>
+        <td><strong>Correo: </strong>{{cliente.correo}}</td>
+    </tbody>
+</table>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Precio Unitario</th>
+            <th scope="col">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for producto in listaProductos%}
+        <tr>
+            <td>{{producto.codigo}}</td>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.stock}}</td>
+            <td>{{producto.precio_Unitario}}</td>
+            <td>
+                 <a href="{% url 'comprar' cedula producto.codigo total %}"><i class="bi bi-check-circle"></i></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'terminar_Compra' cedula total %}">Terminar Compra <i class="bi bi-check-circle"></i></a>
+{% endblock %}
